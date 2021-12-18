@@ -41,12 +41,6 @@ const options = [
     },
 ]
 
-const showTranslate = () =>{
-    if(window.location.pathname === '/translation'){
-        return <Translate />
-    }
-}
-
 const App = () => {
 
     const [selected, setSelected] = useState(options[0])

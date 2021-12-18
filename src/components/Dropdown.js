@@ -3,7 +3,6 @@ import React, {useState, useEffect, useRef} from 'react'
 const Dropdown = ({options, selected, onSelectedChange, label}) => {
 
     const [open, setOpen] = useState(false)
-    const [color, setColor] = useState(options[0].value)
     const ref = useRef()
 
     const renderedOptions = options.map( option =>{
@@ -11,10 +10,7 @@ const Dropdown = ({options, selected, onSelectedChange, label}) => {
         if(selected.value === option.value) return null
 
         return(
-            <div onClick={()=>{
-                onSelectedChange(option)
-                setColor(option.value)
-                }} className='item' key={option.value}>
+            <div onClick={()=>{onSelectedChange(option)}} className='item' key={option.value}>
                 {option.label}
             </div>
         )
